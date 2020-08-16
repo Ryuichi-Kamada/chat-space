@@ -10,6 +10,7 @@
 - has_many: messages
 
 
+
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
