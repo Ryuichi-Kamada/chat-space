@@ -1,23 +1,25 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_name|string|null: false,add_index:true|
-|email|string|null: false,uique:true|
-|password|string|null:false
-|password confirmation|null:false|
+|name|string|null: false,index: true|
+|email|string|null: false,uique: true|
+|password|string|null: false
+|password_confirmation|null: false|
 
 ### Association
 - has_many: messages
-
+- has_many: groups, through: :groups_users
 
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false,add_index:true|
+|name|string|null: false,index: true,unique: true|
 
 ### Association
-- has_many: users
+- has_many: groups_users
+- has_many: messages
+
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -33,9 +35,11 @@
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null:false,foreign_key:trye|
-|message|text,image|null: false,limit:50|
+|text|text|limit:50|
+|body|image|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-
+- has_one: group
