@@ -38,10 +38,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |text|text|limit:50|
-|body|image|
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- has_one: group
+- belongs_to : group
