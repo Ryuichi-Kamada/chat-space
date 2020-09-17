@@ -26,12 +26,11 @@
 
   .chat-main_footer
     .form
-      .form_text-box
-        type a message
-        .form_img-box
-          %label{class: "input-box__image"}
-            = icon('far','image', class:"image_btn")
-            %input{type:"file",class:"display-none"}
-           
+      .form-contents
+        %input{class:"form_text-box", placeholder:"type a message" ,type:"text" ,name:"message-content" ,id:"message_content"}
+        %label{class: "input-box__image"}
+          = icon('far','image', class:"image_btn")
+          %input{type:"file",class:"display-none"}
+          
       .form_send
         = link_to 'Send','#',class:'send_btn'
