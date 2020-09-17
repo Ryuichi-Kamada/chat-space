@@ -1,0 +1,37 @@
+.chat-main        
+  .chat-main_group-info
+    .chat-main__left-info
+      .chat-main___group-name
+        test
+      .chat-main___member-name
+        Member : 
+    .chat-main__edit
+      = link_to 'Edit', '#',class:'edit_btn'
+  .chat-main__message-list
+    .chat-main___message-info
+      .chat-main____user-name
+        kama
+      .chat-main____message-day
+        2020/09/06 14:14     
+    .chat-main____message
+      ありがとう
+
+    .chat-main___message-info-2
+      .chat-main____user-name-2
+        kama
+      .chat-main____message-day-2
+        2020/09/06 14:14     
+    .chat-main____message-2
+      ありがとう  
+
+  .chat-main_footer
+    .form
+      .form_text-box
+        type a message
+        .form_img-box
+          %label{class: "input-box__image"}
+            = icon('far','image', class:"image_btn")
+            %input{type:"file",class:"display-none"}
+           
+      .form_send
+        = link_to 'Send','#',class:'send_btn'
